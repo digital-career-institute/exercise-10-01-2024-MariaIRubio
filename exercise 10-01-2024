@@ -1,0 +1,68 @@
+* create database studentdb
+
+	CREATE DATABASE studentdb;
+
+
+	SHOW DATABASES;
+	+-----------------------+
+	| Database              |
+	+-----------------------+
+	| InterviewDB           |
+	| PF_Exercise3          |
+	| PF_exercise1          |
+	| PF_exercise2          |
+	| article               |
+	| exercise_albums       |
+	| exercise_car_shop     |
+	| exercise_online_shop  |
+	| exercise_student_list |
+	| information_schema    |
+	| mydb                  |
+	| mysql                 |
+	| new_database          |
+	| performance_schema    |
+	| studentdb             |
+	| students              |
+	| sys                   |
+	+-----------------------+
+
+
+	USE studentdb;
+
+* create table tblstudent
+columns are
+1.studentId datatyepe integer , make it as primary key and it shiuld be auto incremented, 
+2.studentName datatyepe varchar, range 64 
+3.dob datatyp date, 
+4. address datatyp varchar range 64
+
+	CREATE TABLE tblstudent (studentId INT PRIMARY KEY AUTO_INCREMENT, studentName VARCHAR(64), dob DATE, address VARCHAR(64));
+	
+	DESCRIBE tblstudent;
+	+-------------+-------------+------+-----+---------+----------------+
+	| Field       | Type        | Null | Key | Default | Extra          |
+	+-------------+-------------+------+-----+---------+----------------+
+	| studentId   | int         | NO   | PRI | NULL    | auto_increment |
+	| studentName | varchar(64) | YES  |     | NULL    |                |
+	| dob         | date        | YES  |     | NULL    |                |
+	| address     | varchar(64) | YES  |     | NULL    |                |
+	+-------------+-------------+------+-----+---------+----------------+
+	
+
+* Add atlead three entries (3 rows) into the table
+
+	INSERT INTO tblstudent (studentName, dob, address) VALUES 
+	('Maria Nitzschke','1991-07-20', 'Frankfurter Allee 176'), 
+	('Daniel Ibanez','1981-06-26','Prenzlauer Allee 218'), 
+	('Adriana Santana','1994-02-19', 'Principe Asturias 2');
+	
+
+	SELECT * FROM tblstudent;
+	+-----------+-----------------+------------+-----------------------+
+	| studentId | studentName     | dob        | address               |
+	+-----------+-----------------+------------+-----------------------+
+	|         1 | Maria Nitzschke | 1991-07-20 | Frankfurter Allee 176 |
+	|         2 | Daniel Ibanez   | 1981-06-26 | Prenzlauer Allee 218  |
+	|         3 | Adriana Santana | 1994-02-19 | Principe Asturias 2   |
+	+-----------+-----------------+------------+-----------------------+
+
